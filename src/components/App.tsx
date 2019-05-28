@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IReaderProps, IReaderState, EOrientation } from '../interfaces/ReaderInterface';
+import Text from './Text';
 import book1 from '../samplebook/book1.js';
 import { calculateRatio } from '../utils'
 import '../styles/app.css';
@@ -34,16 +35,24 @@ class Reader extends React.Component<IReaderProps, IReaderState> {
 
   render() {
     const { view_w, view_h } = this.state;
-    const { width, height } = this.state.ratio;
+    const { width, height, scale } = this.state.ratio;
     const style = { width, height };
     const styleWrapper = {
       width: view_w,
       height: view_h
     }
 
+    const {content, size, x, y} = book1.pages[0][0];
+
     return (
       <div className="reader-wrapper" style={styleWrapper}>
         <div className="reader" style={style} >
+          <Text
+            content={content}
+            size={size * scale}
+            x={x * scale}
+            y={y * scale}
+          />
         </div>
       </div>
     )
