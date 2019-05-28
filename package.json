@@ -4,12 +4,27 @@
   "description": "Digital editorial",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/http-server/bin/http-server -p 8765",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --open --hot --port 8765",
+    "build": "./node_modules/webpack/bin/webpack.js --mode production",
+    "start-built": "./node_modules/http-server/bin/http-server -p 8765"
   },
   "author": "Roberto Antelo",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "http-server": "^0.11.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   }
 }
