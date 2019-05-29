@@ -4,19 +4,20 @@ import Text from './Text';
 import book1 from '../samplebook/book1.js';
 import { calculateRatio } from '../utils'
 import '../styles/app.css';
+import { TTextAlignment } from '../interfaces/TextInterface';
 
 class Reader extends React.Component<IReaderProps, IReaderState> {
   constructor(props: IReaderProps) {
     super(props);
     this.state = {
       ratio: {
-        width: 0,
-        height: 0,
+        height     : 0,
         orientation: EOrientation.Portrait,
-        scale: 1
+        scale      : 1,
+        width      : 0,
       },
       view_w: 0,
-      view_h: 0
+      view_h: 0,
     }
   }
   componentDidMount() {
@@ -28,8 +29,8 @@ class Reader extends React.Component<IReaderProps, IReaderState> {
 
     this.setState({
       ratio,
+      view_h,
       view_w,
-      view_h
     })
   }
 
@@ -38,20 +39,17 @@ class Reader extends React.Component<IReaderProps, IReaderState> {
     const { width, height, scale } = this.state.ratio;
     const style = { width, height };
     const styleWrapper = {
+      height: view_h,
       width: view_w,
-      height: view_h
     }
-
-    const {content, size, x, y} = book1.pages[0][0];
 
     return (
       <div className="reader-wrapper" style={styleWrapper}>
         <div className="reader" style={style} >
           <Text
-            content={content}
-            size={size * scale}
-            x={x * scale}
-            y={y * scale}
+            {...book1.pages[0][0]}
+            alignment={book1.pages[0][0].alignment as TTextAlignment}
+            ratioScale={scale}
           />
         </div>
       </div>

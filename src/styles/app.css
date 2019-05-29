@@ -1,7 +1,17 @@
 body {padding: 0; margin: 0;}
+@media print {
+  html, body {
+     display: none;  /* hide whole page */
+  }
+}
 
 .reader-wrapper {
   background-color: #3d3d3e;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 .reader {
   background-color: #6b6b6b;
@@ -14,7 +24,5 @@ body {padding: 0; margin: 0;}
 .text {
   margin: 0;
   padding: 0;
-  position: relative;
-  border: 1px solid #f1a9ff;
-  text-align: justify;
+  position: absolute;
 }

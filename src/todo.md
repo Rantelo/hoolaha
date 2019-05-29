@@ -2,8 +2,9 @@
 Incremental dev hoolaha
 
 - Aspect ratio
-- [ ] User can choose the size of the page but it's for us to decide how to fit the page into the screen
-- [ ] user oughta choose the orientation
+- [x] User can choose the size of the page but it's for us to decide how to fit the page into the screen
+- [x] user oughta choose the orientation
+- [ ] add window.resize listeners
 - [ ] in a future we can warn the user with a little sample on how their pages are going to look in different screen sizes
 
 - render a page with images and text

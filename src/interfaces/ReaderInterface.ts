@@ -1,17 +1,17 @@
 export enum EOrientation {
   Landscape = "landscape",
-  Portrait = "portrait"
+  Portrait  = "portrait"
 }
 export interface IRatio {
-  width: number,
-  height: number,
+  height     : number,
   orientation: EOrientation,
-  scale: number
+  scale      : number,
+  width      : number,
 }
 
 export interface IReaderProps {}
 export interface IReaderState {
-  ratio: IRatio,
+  ratio : IRatio,
+  view_h: number,
   view_w: number,
-  view_h: number
 }

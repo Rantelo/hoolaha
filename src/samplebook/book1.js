@@ -8,13 +8,14 @@ const book = {
     [
       {
         "type": "text",
-        "content": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-        "size": 32,
-        "color": "white",
+        "alignment": "center",
+        "color": { r: 255, g: 255, b: 255, a: 0.8 },
+        "content": "I am the product of all the ancestors getting together and deciding these stories need to be told",
+        "size": 12,
         "weight": "normal",
-        "x": 100,
-        "y": 300,
-        "width": 200
+        "width": 200,
+        "x": 220,
+        "y": 152,
       }
     ]
   ]
