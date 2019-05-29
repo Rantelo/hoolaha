@@ -6,6 +6,8 @@ import { calculateRatio } from '../utils'
 import '../styles/app.css';
 import { TTextAlignment } from '../interfaces/TextInterface';
 
+let w: number = 0;
+let h: number = 0;
 class Reader extends React.Component<IReaderProps, IReaderState> {
   constructor(props: IReaderProps) {
     super(props);
@@ -15,32 +17,26 @@ class Reader extends React.Component<IReaderProps, IReaderState> {
         orientation: EOrientation.Portrait,
         scale      : 1,
         width      : 0,
-      },
-      view_w: 0,
-      view_h: 0,
+      }
     }
+  }
+  componentWillMount() {
+    w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   }
   componentDidMount() {
     const { width: book_w, height: book_h } = book1.aspectRatio;
-    const view_w = window.innerWidth;
-    const view_h = window.innerHeight;
+    const ratio = calculateRatio(book_w, book_h, w, h);
 
-    const ratio = calculateRatio(book_w, book_h, view_w, view_h);
-
-    this.setState({
-      ratio,
-      view_h,
-      view_w,
-    })
+    this.setState({ ratio })
   }
 
   render() {
-    const { view_w, view_h } = this.state;
     const { width, height, scale } = this.state.ratio;
     const style = { width, height };
     const styleWrapper = {
-      height: view_h,
-      width: view_w,
+      height: h,
+      width: w,
     }
 
     return (

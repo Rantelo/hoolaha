@@ -12,6 +12,4 @@ export interface IRatio {
 export interface IReaderProps {}
 export interface IReaderState {
   ratio : IRatio,
-  view_h: number,
-  view_w: number,
 }
