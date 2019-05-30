@@ -26,3 +26,9 @@ body {padding: 0; margin: 0;}
   padding: 0;
   position: absolute;
 }
+
+.image {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}

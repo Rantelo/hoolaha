@@ -18,3 +18,7 @@ Incremental dev hoolaha
 - [ ] whenever a single page is selected, it's going to load all the elements of that single page
 - [ ] in the future we can include a thumbnail of each page while the elements off the page are loading.
 - [ ] with the previous improvement we can also a boy to load all the elements of a page while scrolling through the different pages
+
+
+### Random things to do
+- [ ] Load images through webpack

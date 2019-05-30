@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IReaderProps, IReaderState, EOrientation } from '../interfaces/ReaderInterface';
 import Text from './Text';
+import Image, { TImageHeight} from './Image';
 import book1 from '../samplebook/book1.js';
 import { calculateRatio } from '../utils'
 import '../styles/app.css';
@@ -39,12 +40,20 @@ class Reader extends React.Component<IReaderProps, IReaderState> {
       width: w,
     }
 
+    const text_props = book1.pages[0]["0"];
+    const image_props = book1.pages[0]["1"];
+
     return (
       <div className="reader-wrapper" style={styleWrapper}>
         <div className="reader" style={style} >
           <Text
-            {...book1.pages[0][0]}
-            alignment={book1.pages[0][0].alignment as TTextAlignment}
+            {...text_props}
+            alignment={text_props.alignment as TTextAlignment}
+            ratioScale={scale}
+          />
+          <Image
+            {...image_props}
+            height={image_props.height as TImageHeight}
             ratioScale={scale}
           />
         </div>

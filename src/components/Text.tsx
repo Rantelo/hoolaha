@@ -7,12 +7,13 @@ class Text extends React.Component<ITextProps, ITextState> {
     super(props);
   }
   static defaultProps = {
-    alignment: 'left',
-    content  : 'text',
-    size     : 14,
-    width    : 100,
-    x        : 0,
-    y        : 0,
+    alignment : 'left',
+    content   : 'text',
+    ratioScale: 1,
+    size      : 14,
+    width     : 100,
+    x         : 0,
+    y         : 0,
   }
 
   render() {
